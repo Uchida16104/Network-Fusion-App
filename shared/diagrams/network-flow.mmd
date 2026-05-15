@@ -1,0 +1,8 @@
+flowchart TD
+  U[User] --> F[Vue Frontend]
+  F --> R[Render]
+  R --> L[Laravel API]
+  L --> G[Graph Analyzer]
+  G --> P[Repair Planner]
+  P --> L
+  L --> F
