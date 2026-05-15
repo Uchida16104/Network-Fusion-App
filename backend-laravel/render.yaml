@@ -2,7 +2,14 @@ services:
   - type: web
     name: network-fusion-backend
     env: docker
-    plan: free
-    rootDir: backend-laravel
-    healthCheckPath: /api/health
+    dockerfilePath: ./Dockerfile
     autoDeploy: true
+    plan: free
+    healthCheckPath: /api/health
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: "false"
+      - key: APP_URL
+        value: https://network-fusion-backend.onrender.com
