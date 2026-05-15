@@ -15,10 +15,9 @@ RUN apt-get update && apt-get install -y \
 
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
-COPY composer.json ./
-RUN composer install --no-dev --prefer-dist --no-interaction --no-progress
-
 COPY . .
+
+RUN composer install --no-dev --prefer-dist --no-interaction --no-progress
 
 RUN chown -R www-data:www-data /var/www/html \
     && chmod -R 775 storage bootstrap/cache
