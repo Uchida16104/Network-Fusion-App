@@ -19,7 +19,8 @@ COPY . .
 
 RUN composer install --no-dev --prefer-dist --no-interaction --no-progress
 
-RUN chown -R www-data:www-data /var/www/html \
+RUN mkdir -p storage bootstrap/cache \
+    && chown -R www-data:www-data /var/www/html \
     && chmod -R 775 storage bootstrap/cache
 
 EXPOSE 8000
