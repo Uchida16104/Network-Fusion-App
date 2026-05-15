@@ -2,7 +2,6 @@ services:
   - type: web
     name: network-fusion-backend
     env: docker
-    dockerfilePath: ./Dockerfile
     autoDeploy: true
     plan: free
     healthCheckPath: /api/health
