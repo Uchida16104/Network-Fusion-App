@@ -1,0 +1,6 @@
+CREATE TABLE IF NOT EXISTS analysis_history (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  kind TEXT NOT NULL,
+  payload TEXT NOT NULL,
+  created_at TEXT NOT NULL
+);
