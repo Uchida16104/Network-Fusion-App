@@ -5,5 +5,5 @@ services:
     rootDir: backend-laravel
     dockerfilePath: ./Dockerfile
     autoDeploy: true
-    healthCheckPath: /api/health
+    healthCheckPath: /up
     plan: free
