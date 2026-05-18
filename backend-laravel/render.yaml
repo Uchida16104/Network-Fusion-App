@@ -3,7 +3,8 @@ services:
     name: network-fusion-backend
     env: docker
     rootDir: backend-laravel
-    dockerfilePath: ./Dockerfile
+    dockerfilePath: backend-laravel/Dockerfile
+    dockerContext: backend-laravel
     autoDeploy: true
     healthCheckPath: /up
     plan: free
