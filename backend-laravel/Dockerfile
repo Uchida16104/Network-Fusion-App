@@ -18,6 +18,9 @@ COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 COPY . .
 
 RUN composer install --no-dev --prefer-dist --no-interaction --no-progress
+    && ls -la \
+    && ls -la vendor \
+    && test -f vendor/autoload.php
 
 RUN mkdir -p storage bootstrap/cache \
     && chown -R www-data:www-data /var/www/html \
